@@ -3,9 +3,9 @@
 namespace App\Repositories\QueryBuilder;
 
 use Illuminate\Support\Facades\DB;
-use App\Repositories\ContactRepositoryInterface;
+use App\Repositories\BlogRepositoryInterface;
 
-class ContactRepository implements ContactRepositoryInterface
+class BlogRepository implements BlogRepositoryInterface
 {	
 	public function getAll()
 	{
