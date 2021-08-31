@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,12 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::view('/', 'welcome');
-Route::resource('contact', ContactController::class);
+Route::get('/', [HomeController::class, 'index']);
+Route::get('home', [HomeController::class, 'index'])->name('home.index');
+Route::get('home/blog/{slug}', [HomeController::class, 'blogShow'])->name('home.blog.show');
+
+Route::middleware('auth')->group(function() {
+	Route::resource('blog', BlogController::class);
+	Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+	Route::resource('user', UserController::class);
+});
