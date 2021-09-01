@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ApiBlogController;
+use App\Http\Controllers\Api\ApiUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::name('api.')->group(function() {
+	Route::resource('user', ApiUserController::class);
+	Route::resource('blog', ApiBlogController::class);
+});
+
