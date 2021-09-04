@@ -8,7 +8,7 @@ use App\Services\BlogService;
 class BlogController extends Controller
 {
     /**
-     * ContactService Implementation.
+     * BlogService Implementation.
      * 
      * @var BlogService
      */

@@ -8,7 +8,7 @@ use App\Services\UserService;
 class UserController extends Controller
 {
     /**
-     * ContactService Implementation.
+     * UserService Implementation.
      * 
      * @var UserService
      */
